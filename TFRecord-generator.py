@@ -182,8 +182,15 @@ generate_json_info("data/enzyme.json")
 
 
 
+seq = train['SEQUENCE'].head()
 
 
+seq = np.array([np.array(i) for i in seq])
+
+tf_seq = tf.convert_to_tensor(seq)
+
+
+one_seq = tf.one_hot(tf_seq, 25)
 
 
 
